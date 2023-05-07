@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Selenium Grid 4 and Appium Test Execution Suite" parallel="tests" thread-count="2">
+
+    <test name="emulator-5554">
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="platformVersion" value="13"/>
+        <classes>
+            <class name="io.github.muammercaki.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="emulator-5556">
+        <parameter name="udid" value="emulator-5556"/>
+        <parameter name="platformVersion" value="13"/>
+        <classes>
+            <class name="io.github.muammercaki.tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>
