@@ -17,3 +17,4 @@ bin
 .project
 
 .DS_Store
+/assets/

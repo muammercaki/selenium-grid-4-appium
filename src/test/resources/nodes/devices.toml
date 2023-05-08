@@ -1,0 +1,12 @@
+[node]
+detect-drivers = false
+
+[relay]
+# Default Appium server endpoint
+url = "http://localhost:4723"
+status-endpoint = "/status"
+
+configs = [
+    "1", '{"udid": "emulator-5554", "platformName": "android", "appium:platformVersion": "13", "appium:automationName": "UiAutomator2"}',
+    "1", '{"udid": "emulator-5556", "platformName": "android", "appium:platformVersion": "13", "appium:automationName": "UiAutomator2"}'
+]

@@ -14,21 +14,24 @@ import java.net.URL;
 public class BaseTest {
 
     private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
-    public WebDriver driver;
+    // public WebDriver driver;
+    public AndroidDriver driver;
+    private final String gridUrl = "http://localhost:4444";
 
     @BeforeMethod
     @Parameters(value = {"udid", "platformVersion"})
     public void setUp(String udid, String platformVersion) throws MalformedURLException {
-
-        URL url = new URL("https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");
+        URL gridUrl = new URL(this.gridUrl);
+       // URL url = new URL("");
         final UiAutomator2Options options = new UiAutomator2Options().setUdid(udid)
                 .setPlatformVersion(platformVersion)
-                .setApp(url)
+                .setApp("https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk")
                 .fullReset()
                 .setAppWaitActivity("com.swaglabsmobileapp.MainActivity");
 
-        DRIVER_THREAD_LOCAL.set(new AndroidDriver(options));
-        driver = DRIVER_THREAD_LOCAL.get();
+        driver = new AndroidDriver(gridUrl, options);
+//        DRIVER_THREAD_LOCAL.set(new AndroidDriver(options));
+//        driver = DRIVER_THREAD_LOCAL.get();
     }
 
     @AfterMethod(alwaysRun = true)
