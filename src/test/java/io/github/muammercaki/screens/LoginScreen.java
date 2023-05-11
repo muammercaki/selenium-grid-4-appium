@@ -3,7 +3,10 @@ package io.github.muammercaki.screens;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static io.appium.java_client.AppiumBy.*;
+import static io.appium.java_client.AppiumBy.accessibilityId;
+import static org.openqa.selenium.By.xpath;
+
+//import static io.appium.java_client.AppiumBy.*;
 
 public class LoginScreen extends BaseScreen {
 
